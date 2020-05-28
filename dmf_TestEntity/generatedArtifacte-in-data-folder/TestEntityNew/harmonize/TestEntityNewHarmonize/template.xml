@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><cre:TestEntityNew xmlns:cre="http://nl.abnamro.com/cre">
+  <cre:clientID>CTX_testEntityNew_ATT_clientID</cre:clientID>
+  <cre:EmployeeFirstName>CTX_testEntityNew_ATT_EmployeeFirstName</cre:EmployeeFirstName>
+  <cre:supervisername>CTX_testEntityNew_ATT_supervisername</cre:supervisername>
+  <cre:DOB>CTX_testEntityNew_ATT_DOB</cre:DOB>
+  <cre:Account>tfct:coalesce((CTX_testEntityNew_ATT_Account1,CTX_testEntityNew_ATT_Account2))</cre:Account>
+</cre:TestEntityNew>

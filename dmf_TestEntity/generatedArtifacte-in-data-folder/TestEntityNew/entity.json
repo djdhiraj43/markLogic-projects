@@ -1,0 +1,37 @@
+{
+  "info": {
+    "title": "TestEntityNew",
+    "version": "1.0.0",
+    "baseUri": "http://nl.abnamro.com/cre/cdm/",
+    "description": "New Test Entity"
+  },
+  "definitions": {
+    "TestEntityNew": {
+      "required": [],
+      "namespace": "http://nl.abnamro.com/cre",
+      "namespacePrefix": "cre",
+      "properties": {
+        "EmployeeID": {
+          "datatype": "string",
+          "collation": "http://marklogic.com/collation/codepoint"
+        },
+        "employeeName": {
+          "datatype": "string",
+          "collation": "http://marklogic.com/collation/codepoint"
+        },
+        "DOB": {
+          "datatype": "string",
+          "collation": "http://marklogic.com/collation/codepoint"
+        },
+        "Account": {
+          "datatype": "string",
+          "collation": "http://marklogic.com/collation/codepoint"
+        },
+        "ManagerName": {
+          "datatype": "string",
+          "collation": "http://marklogic.com/collation/codepoint"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "info": {
+    "title": "IngestTestEntityNew",
+    "version": "1.0.0",
+    "baseUri": "http://nl.abnamro.com/cre/xyz/",
+    "description": "New Test Entity"
+  },
+  "definitions": {
+    "TestData": {
+      "required": ["EmployeeID","employeeName"],
+      "namespace": "http://nl.abnamro.com/cre/xyz",
+      "namespacePrefix": "xyz",
+      "properties": {
+        "EmployeeID": {
+          "datatype": "string",
+          "collation": "http://marklogic.com/collation/codepoint"
+        },
+        "employeeName": {
+          "datatype": "string",
+          "collation": "http://marklogic.com/collation/codepoint"
+        }
+      }
+    }
+  }
+}

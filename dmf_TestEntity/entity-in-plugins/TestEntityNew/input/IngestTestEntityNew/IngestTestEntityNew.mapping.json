@@ -1,0 +1,36 @@
+{
+  "info" : {
+    "title" : "IngestTestEntityNew",
+    "version" : "0.0.1",
+    "baseUri" : "http://nl.abnamro.com/cre/xyz",
+    "description" : "Reference entity model"
+  },
+  "pathNamespaces": [
+    {
+      "prefix": "es",
+      "namespaceUri": "http://marklogic.com/entity-services"
+    },
+    {
+      "prefix": "xyz",
+      "namespaceUri": "http://nl.abnamro.com/cre/xyz",
+      "default": true
+    },
+    {
+      "prefix": "fn",
+      "namespaceUri": "http://www.w3.org/2005/xpath-functions"
+    },
+    {
+      "prefix": "fcm",
+      "namespaceUri": "http://abnamro.nl/data-hub/common"
+    }
+  ],
+  "definitions": {
+    "TestData": {
+      "headers": {
+        "hid": {
+          "expression": "fcm:md5(fn:string-join((EmployeeID,employeeName), '-'))"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+task loadTestEntityNew(type: com.marklogic.gradle.task.MlcpTask) {
+  classpath = configurations.mlcp
+  port = mlStagingPort as Integer
+  command = "IMPORT"
+  username = mlAppName + "-ingester"
+  password = dmfIngesterPassword
+  database = mlFinalDbName
+  input_file_path =testEntityDataFolder
+  input_file_pattern = "TestData"
+  output_collections = 'http://nl.abnamro.com/cre/source/xyz,http://nl.abnamro.com/cre/entity/testentitynew,http://nl.abnamro.com/cre/raw,latest,/job-id/' + project.getProperty("jobid")
+  transform_param = 'entity-name=TestEntityNew,flow-name=IngestTestEntityNew,options={\\"source\\":\\"test\\", \\"jobid\\":\\"'+ project.getProperty("jobid")+'\\"}'
+  options_file = "ingestion-options/IngestTestEntityDataSSL.txt"
+}
+loadTestEntityNew.group = INGEST_GROUP

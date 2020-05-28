@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><s:schema xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:xdmp="http://marklogic.com/xdmp">
+  <s:ns prefix="es" uri="http://marklogic.com/entity-services"/>
+  <s:ns prefix="xyz" uri="http://nl.abnamro.com/cre/xyz"/>
+  <s:ns prefix="fn" uri="http://www.w3.org/2005/xpath-functions"/>
+  <s:ns prefix="fcm" uri="http://abnamro.nl/data-hub/common"/>
+  <s:ns prefix="fcm" uri="http://abnamro.nl/data-hub/common"/>
+  <s:ns prefix="map" uri="http://marklogic.com/xdmp/map"/>
+  <xdmp:import-module namespace="http://abnamro.nl/data-hub/common" href="/ext/data-hub/lib/common-lib.xqy"/>
+  <s:pattern id="TestEntityNew.pattern">
+    <s:title>TestEntityNew attributes extraction.</s:title>
+    <s:rule context="/xyz:TESTDATA" id="testEntityNew.rule">
+      <s:report role="properties" test="true()" id="CTX_testEntityNew_ATT_clientID">
+        <s:value-of select="fn:string-join(('ABN',xyz:EmployeeID),':')"/>
+      </s:report>
+      <s:report role="properties" test="true()" id="CTX_testEntityNew_ATT_EmployeeFirstName">
+        <s:value-of select="xyz:employeeName"/>
+      </s:report>
+      <s:report role="properties" test="true()" id="CTX_testEntityNew_ATT_supervisername">
+        <s:value-of select="xyz:ManagerName"/>
+      </s:report>
+      <s:report role="properties" test="true()" id="CTX_testEntityNew_ATT_DOB">
+        <s:value-of select="fn:tokenize(xdmp:parse-yymmdd('MM/dd/yyyy',xs:string(xyz:DOB)),'T')[1]"/>
+      </s:report>
+      <s:report role="properties" test="upper-case(xs:string(xyz:Account))='ABN'" id="CTX_testEntityNew_ATT_Account1">
+        <s:value-of select="xs:string('ABN AMRO')"/>
+      </s:report>
+      <s:report role="properties" test="upper-case(xs:string(xyz:Account))='CITI'" id="CTX_testEntityNew_ATT_Account2">
+        <s:value-of select="xs:string('Citi Bank')"/>
+      </s:report>
+    </s:rule>
+  </s:pattern>
+</s:schema>
